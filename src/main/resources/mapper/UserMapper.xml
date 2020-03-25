@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.demo.dao.UserMapper">
+    <resultMap id="BaseResultMap" type="com.example.demo.entity.TUser">
+        <id column="c_id" jdbcType="varchar" property="id"></id>
+        <result column="username" jdbcType="varchar" property="username"></result>
+        <result column="pass" jdbcType="varchar" property="pass"></result>
+        <result column="yhxm" jdbcType="varchar" property="yhxm"></result>
+    </resultMap>
+    <select id="getUserByYhxm" resultType="TUser" parameterType="String">
+        select * from t_user t where t.yhxm=#{yhxm}
+    </select>
+</mapper>

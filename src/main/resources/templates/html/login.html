@@ -1,0 +1,16 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Getting Started: Serving Web Content</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+    <form action="/user/submit" METHOD="post">
+        <label>用户名</label>
+        <input type="text" name="username" id="username" th:value="${username}"  />
+        <label>密码</label>
+        <input type="password" name="password" id="password"/>
+        <input type="submit"  th:value="登录"/>
+    </form>
+</body>
+</html>
