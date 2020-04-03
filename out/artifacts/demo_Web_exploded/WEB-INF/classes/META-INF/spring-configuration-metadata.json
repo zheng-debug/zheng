@@ -1,0 +1,22 @@
+{
+  "groups": [
+    {
+      "name": "url",
+      "type": "com.example.demo.config.MicroServiceUrl",
+      "sourceType": "com.example.demo.config.MicroServiceUrl"
+    }
+  ],
+  "properties": [
+    {
+      "name": "url.order-url",
+      "type": "java.lang.String",
+      "sourceType": "com.example.demo.config.MicroServiceUrl"
+    },
+    {
+      "name": "url.shop-url",
+      "type": "java.lang.String",
+      "sourceType": "com.example.demo.config.MicroServiceUrl"
+    }
+  ],
+  "hints": []
+}
