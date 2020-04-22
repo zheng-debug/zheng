@@ -150,4 +150,39 @@ class DemoApplicationTests {
         return root;
     }
 
+    /*
+	输入一个正整数，输出正整数m，m>9,m的各位乘积等于输入的正整数。
+	思路：1、将n分解成最小的因子组，若因子组中存在2位数字，则直接结束方法返回-1；若因子组中全为个位数字
+	则将个位数字两两进行相乘，得到较大的各位数字。
+	 */
+    @Test
+    public void  test1(){
+        int firstNum = 2;
+        int divisor1 = 2;
+
+        StringBuffer result = new StringBuffer();
+        if (firstNum <= 9) {
+            result.append("1");
+        }
+        while(divisor1<=9){
+            Boolean isdivided = false;//是否整除
+            isdivided = firstNum%divisor1==0;
+            firstNum = isdivided ?  firstNum/divisor1 : firstNum ;
+            if(isdivided){
+                result.append(divisor1);
+            }else{
+                if(firstNum<=9){
+                    break;
+                }else{
+                    divisor1++;
+                }
+            }
+        }
+        if (divisor1>9){
+            System.out.println("lueluelue");
+        }else{
+            System.out.println(result.toString());
+        }
+    }
+
 }
