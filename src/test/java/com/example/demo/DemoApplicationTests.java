@@ -179,7 +179,7 @@ class DemoApplicationTests {
             }
         }
         if (divisor1>9){
-            System.out.println("lueluelssue");
+            System.out.println("luelssuessslssue");
         }else{
             System.out.println(result.toString());
         }
