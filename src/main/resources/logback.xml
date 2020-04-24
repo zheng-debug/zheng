@@ -1,7 +1,7 @@
 <!--定义日志输出格式和存储路径-->
 <configuration>
     <property name="LOG_PATTERN" value="%date{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n" />
-    <property name="FILE_PATH" value="E:/Documents/logs/demo/demo.%d{yyyy-MM-dd}.%i.log" />
+    <property name="FILE_PATH" value="${catalina.home}/logs/demo.%d{yyyy-MM-dd}.%i.log" />
 
     <!--定义控制台输出-->
     <appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender">

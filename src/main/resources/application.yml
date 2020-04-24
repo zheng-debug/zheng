@@ -1,6 +1,6 @@
 logging:
   config:
-    E:\学习资料\项目\demo\src\main\resources\logback.xml
+    classpath:logback.xml
   level:
     com.example.demo.dao: trace
 

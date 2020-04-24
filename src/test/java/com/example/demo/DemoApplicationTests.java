@@ -153,36 +153,27 @@ class DemoApplicationTests {
     /*
 	输入一个正整数，输出正整数m，m>9,m的各位乘积等于输入的正整数。
 	思路：1、将n分解成最小的因子组，若因子组中存在2位数字，则直接结束方法返回-1；若因子组中全为个位数字
-	则将个位数字两两进行相乘，得到较大的各位数字。
+	则将个位数字两两进行相乘，得到较大的各位数字。(方法弊端，获取到所有的最小因子后，较难判断该因子组的所有组合中最小的组合方法)
+	      2、因为因子最大只能为9，所以直接从9开始进行遍历，如果可以整除就进行整除。
+	由此可以获得每位数字较大的因子组，且同时因子组的数目较短。然后将该因子组从小到大进行排序拼接，则可得到最小的正整数m
 	 */
     @Test
     public void  test1(){
-        int firstNum = 2;
-        int divisor1 = 2;
-
+        int firstNum = 13;
         StringBuffer result = new StringBuffer();
         if (firstNum <= 9) {
-            result.append("1");
+            System.out.println("1"+firstNum);
         }
-        while(divisor1<=9){
-            Boolean isdivided = false;//是否整除
-            isdivided = firstNum%divisor1==0;
-            firstNum = isdivided ?  firstNum/divisor1 : firstNum ;
-            if(isdivided){
-                result.append(divisor1);
-            }else{
-                if(firstNum<=9){
-                    break;
-                }else{
-                    divisor1++;
-                }
+        for(int i=9;i>1;i--){
+            while(firstNum%i==0){
+                firstNum =  firstNum/i;
+                result.insert(0,i+"");
             }
         }
-        if (divisor1>9){
-            System.out.println("luelssuessslssue");
+        if(firstNum!=1){
+            System.out.println("-1");
         }else{
             System.out.println(result.toString());
         }
     }
-
 }
