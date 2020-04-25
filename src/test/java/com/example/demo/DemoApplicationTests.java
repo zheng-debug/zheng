@@ -1,6 +1,9 @@
 package com.example.demo;
 
 import com.example.demo.TestController;
+import com.example.demo.entity.SftpAuthority;
+import com.example.demo.service.sftp.UploadService;
+import com.jcraft.jsch.JSchException;
 import org.junit.Before;
 import org.junit.jupiter.api.Test;
 import org.junit.runner.RunWith;
@@ -17,6 +20,7 @@ import org.springframework.test.web.servlet.result.MockMvcResultMatchers;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 import org.springframework.web.context.WebApplicationContext;
 
+import javax.servlet.http.HttpServletRequest;
 import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -175,5 +179,15 @@ class DemoApplicationTests {
         }else{
             System.out.println(result.toString());
         }
+    }
+
+    @Test
+    public void  toUploadPage() throws JSchException {
+        UploadService uploadService = new UploadService();
+        SftpAuthority sftpAuthority = new SftpAuthority("root","120.79.95.178",22);
+        sftpAuthority.setPassword("Root1234@");
+        uploadService.createChanner(sftpAuthority);
+        uploadService.uploadFile(sftpAuthority,"C:/Users/zjc/Desktop/包席菜单（黑白色调）.zip","/uploadFile");
+        uploadService.closeChannel();
     }
 }

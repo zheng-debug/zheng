@@ -108,6 +108,13 @@
             <version>1.4.0</version>
         </dependency>
 
+        <!--sftp依赖-->
+        <dependency>
+            <groupId>com.jcraft</groupId>
+            <artifactId>jsch</artifactId>
+            <version>0.1.54</version>
+        </dependency>
+
         <!--用于屏蔽SpringBoot中的tomcat容器-->
        <!-- <dependency>
             <groupId>org.springframework.boot</groupId>
