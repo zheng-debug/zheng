@@ -16,14 +16,14 @@ public class UploadFile {
     private UploadService uploadService;
 
 
-    @RequestMapping("upload")
+    @RequestMapping("/upload")
     public String toUploadPage(HttpServletRequest request) throws JSchException {
 
-        SftpAuthority sftpAuthority = new SftpAuthority("root","120.79.95.178",22);
+        /*SftpAuthority sftpAuthority = new SftpAuthority("root","120.79.95.178",22);
         sftpAuthority.setPassword("password");
         uploadService.createChanner(sftpAuthority);
         uploadService.uploadFile(sftpAuthority,"","");
-        uploadService.closeChannel();
+        uploadService.closeChannel();*/
 
         return "/html/upload";
     }
